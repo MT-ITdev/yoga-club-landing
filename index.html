@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YogaClub</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="header">
+    <div class="container wow animate__slideInDown" data-wow-duration="2s">
+        <div class="burger" id="burger">
+
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="40px" height="22px">
+                <image x="0px" y="0px" width="40px" height="22px"
+                       xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAWBAMAAABAoMODAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAHlBMVEVvGitvGixvGStwGiz///9vGixwGixvGStvGiv////cjYlIAAAABXRSTlMAAAAAAMJrBrEAAAABYktHRASPaNlRAAAAB3RJTUUH6QQBFxAyK9/XawAAANFJREFUGNO9kdttxSAQBZdLAyw0YOwG4G4LaWEXGuDRgB03ALjs3ALym5zPkUYa6YCcUtYoF/fGZaXEtRaQma8iReY5x32ePGR2UIg+7s6h1wqUc+EdEb5+2f9BjzYYDNp6HygoMJYI6kztktFWudJZc+79XpDl+5Zea129Cadb5ixAH4Oi9dvhjkjBKfXSoAG9cSaQxd0cegua4p/Eu6heCu0e9KYJPYJ/a4AYML4pGrvTFhwpBAutsYwquXMrtbaR+WH43PI8UurgwZxz4bzSD0tjcmqTwnH5AAAAAElFTkSuQmCC"/>
+            </svg>
+
+        </div>
+        <div class="logo">
+            <img src="images/Yoga%20Club.png" alt="Логотип">
+        </div>
+        <nav class="menu" id="menu">
+            <div class="close">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+            <g>
+            	<g>
+            		<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+            			c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+            			c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+            			L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+            			c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+            			c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+            			c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
+            	</g>
+            </g>
+            </svg>
+            </div>
+            <ul>
+                <li class="menu-item">
+                    <a href="#">О нас</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Преподаватели</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Направления</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Залы</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="btn-menu">Заказать звонок</button>
+
+        <div class="menu-popup" id="menuPopup">
+            <div class="menu-popup-overlay"></div>
+            <div class="menu-popup-content">
+                <button class="menu-close-btn" id="menuClosePopup">&times;</button>
+                <h3 class="menu-popup-title">Перезвонить вам?</h3>
+                <div class="menu-popup-info">
+                    <p class="menu-popup-text">Укажите ваш номер телефона, чтобы мы могли связаться с вами</p>
+                    <div class="menu-schedule-input">
+                        <div class="menu-schedule-input-info">
+                            <input type="text" class="menu-schedule-input-text" id="menu-input-name"
+                                   placeholder="Ваше имя">
+                            <div class="error-message" id="menu-name-error" style="display: none;">Введите ваше имя.
+                            </div>
+                        </div>
+                        <div class="menu-schedule-input-contact">
+                            <input type="text" class="menu-schedule-input-text" id="menu-input-phone"
+                                   placeholder="Ваш телефон">
+                            <div class="menu-error-message" id="menu-phone-error" style="display: none;">Введите ваш
+                                телефон.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="menu-schedule-input-btn" id="menu-schedule-input-btn">Заказать звонок</button>
+                </div>
+                <div class="thank-wrapper" id="thankYouBlockMenu">
+                    <div id="thankYouBlockMenuInfo" class="thankYouBlock">
+                        Спасибо, мы вам перезвоним в течение дня!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+<section class="main">
+    <div class="container">
+        <div class="main-info wow animate__slideInLeft" data-wow-duration="2s">
+            <h1>
+                Йога для тела и души в центре Москвы
+            </h1>
+            <div class="main-text">
+                Мы поможем тебе расслабиться, раскрыться творчески, всегда оставаться активной и жизнерадостной
+            </div>
+            <div class="main-action">
+                <button class="btn btn-apply">Записаться</button>
+            </div>
+        </div>
+        <div class="main-image wow animate__slideInRight" data-wow-duration="2s">
+            <img src="images/картинка1.png" alt="image1">
+        </div>
+    </div>
+</section>
+
+<section class="advantages">
+    <div class="container">
+        <div class="advantages-info">
+            <div class="advantages-image wow animate__slideInLeft" data-wow-duration="2s">
+                <img src="images/картинка2.png" alt="image2">
+            </div>
+            <div class="advantages-info-bloc wow animate__slideInRight" data-wow-duration="2s">
+                <h2>
+                    Добро пожаловать в Yoga club!
+                </h2>
+                <div class="advantages-text">
+                    YogaClub – место для йоги, пространство для души. Для нас практика йоги – это не лечебная
+                    физкультура и
+                    не мистический ритуал. Мы стараемся донести до широкой аудитории важность дыхания и контакта со
+                    своим
+                    телом, ценность выработки регулярности в занятиях и необходимость направлять внимание
+                    из суеты внешнего мира во внутрь себя
+                </div>
+            </div>
+        </div>
+        <div class="advantages-descriptions wow animate__slideInUp" data-wow-duration="2s">
+            <div class="advantage-description">
+                <div class="advantages-description-image">
+                    <img src="images/200.png" alt="200">
+                </div>
+                <div class="advantages-description-text">
+                    часов йоги в неделю с 7 утра до 10 вечера
+                </div>
+            </div>
+            <div class="advantage-description">
+                <div class="advantages-description-image">
+                    <img src="images/1000м2.png" alt="1000m2">
+                </div>
+                <div class="advantages-description-text">
+                    уютного пространства йоги
+                </div>
+            </div>
+            <div class="advantage-description">
+                <div class="advantages-description-image">
+                    <img src="images/30.png" alt="30">
+                </div>
+                <div class="advantages-description-text">
+                    профессиональных преподавателей
+                </div>
+            </div>
+            <div class="advantage-description">
+                <div class="advantages-description-image">
+                    <img src="images/1000.png" alt="1000">
+                </div>
+                <div class="advantages-description-text">
+                    чашек травяного чая в неделю
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="teachers">
+    <div class="container">
+        <div class="teachers-info wow animate__slideInLeft" data-wow-duration="2s">
+            <h2>
+                Наши преподаватели
+            </h2>
+            <div class="teachers-text">
+                Для каждого из наших преподавателей йога – это дело их жизни. Каждый звучит уникально, каждый
+                преподносит свое виденье, но суть остается единой. Мы хотим, чтобы вы нашли гармонию и радовались жизни
+                во всех ее проявлениях. Наши учителя вдохновляют, поддерживают, помогают понять и почувствовать йогу.
+                Приходите знакомиться!
+            </div>
+        </div>
+        <div class="swiper wow animate__slideInRight" data-wow-duration="2s">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/преподаватели1.png" alt="1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели2.png" alt="2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели3.png" alt="3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели1.png" alt="4">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели1.png" alt="5">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели1.png" alt="6">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели1.png" alt="7">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели1.png" alt="8">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/преподаватели1.png" alt="9">
+                </div>
+            </div>
+            <!-- Навигация (стрелки) -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+    </div>
+</section>
+<section class="directions">
+    <div class="container wow animate__slideInUp" data-wow-duration="2s">
+        <h2>Направления</h2>
+        <div class="directions-blocks">
+            <div class="direction-block">
+                <div class="direction-block-image">
+                    <img src="images/yoga_position1.png" alt="yoga">
+                </div>
+                <div class="direction-block-info">
+                    <div class="direction-block-title">Хатха йога</div>
+                    <div class="direction-block-text">
+                        <p> от <img src="images/3000_.png" alt="3000"> руб./мес.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="direction-block">
+                <div class="direction-block-image">
+                    <img src="images/yoga_position2.png" alt="yoga">
+                </div>
+                <div class="direction-block-info">
+                    <div class="direction-block-title">Кундалини йога</div>
+                    <div class="direction-block-text">
+                        <p> от <img src="images/3000_.png" alt="3000"> руб./мес.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="direction-block">
+                <div class="direction-block-image">
+                    <img src="images/yoga_position3.png" alt="yoga">
+                </div>
+                <div class="direction-block-info">
+                    <div class="direction-block-title">Термо-йога</div>
+                    <div class="direction-block-text">
+                        <p> от <img src="images/3000_.png" alt="3000"> руб./мес.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Попап с расписанием -->
+            <div class="schedule-popup" id="schedulePopup">
+                <div class="popup-overlay"></div>
+                <div class="popup-content">
+                    <button class="close-btn" id="closePopup">&times;</button>
+                    <h3 class="popup-title">Расписание занятий</h3>
+
+                    <div class="schedule-container">
+                        <div class="days-list">
+                            <button class="day-btn" data-day="Понедельник">Понедельник</button>
+                            <button class="day-btn" data-day="Вторник">Вторник</button>
+                            <button class="day-btn" data-day="Среда">Среда</button>
+                            <button class="day-btn" data-day="Четверг">Четверг</button>
+                            <button class="day-btn" data-day="Пятница">Пятница</button>
+                            <button class="day-btn" data-day="Суббота">Суббота</button>
+                            <button class="day-btn" data-day="Воскресенье">Воскресенье</button>
+                        </div>
+
+                        <div class="schedule-info">
+                            <div class="selected-day"></div>
+                            <div class="schedule-table" id="scheduleTable">
+
+                                <!-- Тут будет динамически отображаться расписание -->
+                                <p class="placeholder">Выберите день недели, чтобы увидеть расписание.</p>
+                            </div>
+
+                            <div class="thank-wrapper" id="thankYouBlockWrapper">
+                                <div id="thankYouBlock" class="thankYouBlock">
+                                    Спасибо, мы вам перезвоним в течение дня!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="formContainer">
+                        <div class="schedule-input">
+                            <div class="schedule-input-info">
+                                <input type="text" class="schedule-input-text" id="input-name" placeholder="Ваше имя">
+                                <div class="error-message" id="name-error" style="display: none;">Введите ваше имя.
+                                </div>
+                            </div>
+                            <div class="schedule-input-contact">
+                                <input type="text" class="schedule-input-text" id="input-phone"
+                                       placeholder="Ваш телефон">
+                                <div class="error-message" id="phone-error" style="display: none;">Введите ваш телефон.
+                                </div>
+                            </div>
+                        </div>
+                        <button class="schedule-input-btn" id="schedule-input-btn">Записаться</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="direction-block">
+                <div class="direction-block-image">
+                    <img src="images/yoga_position4.png" alt="yoga">
+                </div>
+                <div class="direction-block-info">
+                    <div class="direction-block-title">Аштанга йога</div>
+                    <div class="direction-block-text">
+                        <p> от <img src="images/3000_.png" alt="3000"> руб./мес.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="directions-action wow animate__bounceIn" data-wow-duration="3s">
+            <button class="btn">Посмотреть расписание</button>
+        </div>
+    </div>
+</section>
+<section class="halls">
+    <div class="container">
+        <h2>Наши залы</h2>
+        <div class="halls-block">
+            <div class="hall wow animate__slideInLeft" data-wow-duration="2s">
+                <div class="hall-image">
+                    <img src="images/2.png" alt="2">
+                </div>
+                <div class="hall-title">Yoga club на Мясникова</div>
+                <div class="hall-text">
+                    Наша основная студия была открыта в 2014 году. Сейчас это уже по настоящему большой йога-центр общей
+                    площадью более 400 м кв, который занимает два этажа исторического здания на Мясникова.
+                </div>
+            </div>
+            <div class="hall wow animate__slideInRight" data-wow-duration="2s">
+                <div class="hall-title">Yoga place на Бумажной</div>
+                <div class="hall-text">
+                    Студия на ул. Бумажной - пространство света и воздуха. Эта маленькая уютная студия открылась летом
+                    2016
+                    года в мансарде здания на берегу реки Днепр – cветлый лофт с панорамными окнами и видом на реку.
+                </div>
+                <div class="hall-image">
+                    <img src="images/1.png" alt="1">
+                </div>
+            </div>
+        </div>
+
+        <div class="hall-action wow animate__bounceIn" data-wow-duration="3s">
+            <button class="btn btn-halls">Записаться</button>
+        </div>
+    </div>
+</section>
+<section class="contacts wow animate__fadeIn" data-wow-duration="3s">
+    <div class="container wow animate__slideInLeft" data-wow-duration="2s">
+        <div class="contact">
+            <h2>Мы на связи</h2>
+            <div class="contact-info">
+                <ul>
+                    <li>Москва, ул. Бумажная, 34
+                        Москва, ул. Мясникова, 24с11
+                    </li>
+                    <li>+912 19 999 99 99</li>
+                    <li>Ежедневно с 9:00 до 21:00</li>
+                </ul>
+            </div>
+            <div class="contact-network">
+                <a href="#">
+                    <img src="images/facebook.png" alt="facebook">
+                </a>
+                <a href="#">
+                    <img src="images/instagram.png" alt="instagram">
+                </a>
+                <a href="#">
+                    <img src="images/twitter.png" alt="twitter">
+                </a>
+            </div>
+            <div class="contact-form">
+                <div class="contact-form-title">Записаться онлайн</div>
+                <div class="contact-form-order">
+                    <div class="contact-block-name">
+                        <input type="text" maxlength="20" class="contact-form-order-input" id="name" placeholder="Ваше имя">
+                        <div class="error-message" id="name-error-contact" style="display: none;">Введите ваше имя.
+                        </div>
+                    </div>
+                    <div class="contact-block-phone">
+                        <input type="text" maxlength="20" class="contact-form-order-input" id="phone" placeholder="Ваш телефон">
+                        <div class="error-message" id="phone-error-contact" style="display: none;">Введите ваш
+                            телефон.
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-action wow animate__bounceIn" data-wow-duration="3s">
+                    <button class="btn btn-contact" id="btn-contact">Записаться</button>
+                </div>
+            </div>
+            <div class="thank-wrapper" id="thankYouBlockWrapperContact">
+                <div id="thankYouBlockContact" class="thankYouBlock">
+                    Спасибо, мы вам перезвоним в течение дня!
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container wow animate__slideInUp" data-wow-duration="2s">
+        <div class="logo-footer">
+            <img src="images/Yoga%20Club%20footer.png" alt="Логотип">
+        </div>
+        <div class="footer-block">
+            <div class="footer-block-info">Все права защищены</div>
+            <div class="footer-block-link">
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+            <div class="footer-block-phone">
+                <div class="footer-block-phone-image">
+                    <img src="images/phone.png" alt="phone">
+                </div>
+                <div class="footer-block-phone-number">+912 19 999 99 99</div>
+            </div>
+        </div>
+        <div class="footer-action">
+            <button class="btn">Заказать звонок</button>
+        </div>
+    </div>
+</footer>
+<script src="scripts/jquery-3.7.1.min.js"></script>
+<script src="scripts/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1200 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: url("../fonts/gilroy-regular.ttf");
+}
+
+@font-face {
+  font-family: Gilroy Bold;
+  src: url("../fonts/gilroy-bold.ttf");
+}
+
+@font-face {
+  font-family: PlovdivDisplay Bold;
+  src: url("../fonts/PlovdivDisplay-Bold.otf");
+}
+
+.header {
+  background-color: #fef2f2;
+  padding: 36px 0 29px 0;
+
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .burger {
+      display: none;
+    }
+
+    .logo {
+
+    }
+
+    .menu {
+      .close {
+        display: none;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 524px;
+      }
+
+      .menu-item {
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          font-family: Gilroy, sans-serif;
+          color: #3a0413;
+
+          &:hover {
+            font-family: Gilroy Bold, sans-serif;
+          }
+        }
+      }
+    }
+
+    .btn-menu {
+      background-color: transparent;
+      width: 180px;
+      height: 42px;
+      border-radius: 30px;
+      cursor: pointer;
+      outline: none;
+      box-sizing: border-box;
+      font-size: 14px;
+      color: #3a0413;
+      font-family: Gilroy Bold, sans-serif;
+      border: 1px solid #3a0413;
+    }
+
+    .menu-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      align-items: center;
+      overflow-y: auto;
+      overflow-x: auto;
+      height: 100vh;
+      justify-content: center;
+      
+      .menu-popup-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .menu-popup-content {
+        position: relative;
+        background: #fff;
+        width: 80%;
+        max-width: 900px;
+        max-height: 80%;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+
+        .menu-close-btn {
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          background: transparent;
+          border: none;
+          font-size: 77px;
+          cursor: pointer;
+          color: rgb(159, 37, 70);
+          transition: color 0.3s;
+        }
+
+        .menu-popup-title {
+          text-align: center;
+          padding-top: 40px;
+          padding-bottom: 20px;
+          font-size: 35px;
+          font-family: PlovdivDisplay Bold, sans-serif;
+          color: rgb(159, 37, 70);
+        }
+
+        .menu-popup-info {
+          .menu-popup-text {
+            text-align: center;
+            padding-bottom: 20px;
+            font-size: 18px;
+            font-family: PlovdivDisplay Bold, sans-serif;
+            color: rgb(159, 37, 70);
+          }
+
+          .menu-schedule-input {
+            display: flex;
+            margin-left: 94px;
+
+            .menu-schedule-input-info {
+              .menu-schedule-input-text {
+                font-size: 14px;
+                font-family: Gilroy, sans-serif;
+                color: rgb(58, 4, 19);
+                width: 255px;
+                border: none;
+                text-decoration: none;
+                border-bottom: 1px solid #9f2546;
+                margin-left: 79px;
+                margin-top: 60px;
+              }
+
+              .menu-schedule-input-text::placeholder {
+                font-size: 14px;
+                font-family: Gilroy, sans-serif;
+                color: rgb(58, 4, 19);
+              }
+
+              .menu-schedule-input-text:focus {
+                outline: none;
+                border-bottom: 3px solid rgb(58, 4, 19);
+              }
+
+              .error-message {
+                color: red;
+                display: block;
+                margin-left: 79px;
+                margin-top: 5px;
+              }
+            }
+
+            .menu-schedule-input-contact {
+              .menu-schedule-input-text {
+                font-size: 14px;
+                font-family: Gilroy, sans-serif;
+                color: rgb(58, 4, 19);
+                width: 255px;
+                border: none;
+                text-decoration: none;
+                border-bottom: 1px solid #9f2546;
+                margin-left: 79px;
+                margin-top: 60px;
+              }
+
+              .menu-schedule-input-text::placeholder {
+                font-size: 14px;
+                font-family: Gilroy, sans-serif;
+                color: rgb(58, 4, 19);
+              }
+
+              .menu-schedule-input-text:focus {
+                outline: none;
+                border-bottom: 3px solid rgb(58, 4, 19);
+              }
+
+              .menu-error-message {
+                color: red;
+                display: block;
+                margin-left: 79px;
+                margin-top: 5px;
+              }
+            }
+          }
+
+        }
+
+        .menu-schedule-input-btn {
+          background-image: -moz-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+          background-image: -webkit-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+          background-image: -ms-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+          box-shadow: 0 6px 6.51px 0.49px rgba(159, 37, 70, 0.22);
+          width: 297px;
+          padding: 22px 70px;
+          border-radius: 30px;
+          cursor: pointer;
+          outline: none;
+          box-sizing: border-box;
+          font-size: 20px;
+          font-family: Gilroy Bold, sans-serif;
+          border: none;
+          color: white;
+          display: block;
+          margin: 30px auto 5px;
+        }
+        .thank-wrapper {
+          display: none;
+          width: 406px;
+          margin: 0 auto;
+          margin-top: 50px;
+
+          .thankYouBlock {
+            background: #fff;
+            border: 2px solid rgb(119, 10, 29);
+            padding: 20px;
+            box-shadow: 0 0 15px rgb(119, 10, 29);
+            font-size: 20px;
+            z-index: 9999;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.main {
+  background-image: url("../images/фон 1 блок.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  height: 800px;
+  position: relative;
+  background-size: cover;
+  z-index: 2;
+
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .main-info {
+      top: -25px;
+      position: relative;
+
+      h1 {
+        font-size: 45px;
+        font-family: PlovdivDisplay Bold, sans-serif;
+        color: rgb(159, 37, 70);
+        line-height: 1.111;
+        margin-bottom: 60px;
+        max-width: 467px;
+      }
+
+      .main-text {
+        font-size: 18px;
+        font-family: Gilroy, sans-serif;
+        color: rgb(58, 4, 19);
+        line-height: 1.278;
+        left: 374.812px;
+        top: 400.575px;
+        width: 381px;
+        height: 63px;
+        margin-bottom: 60px;
+      }
+
+      .main-action {
+        .btn {
+          background-image: -moz-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+          background-image: -webkit-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+          background-image: -ms-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+          box-shadow: 0px 6px 6.51px 0.49px rgba(159, 37, 70, 0.22);
+          width: 260px;
+          height: 60px;
+          border-radius: 30px;
+          cursor: pointer;
+          outline: none;
+          box-sizing: border-box;
+          font-size: 20px;
+          font-family: Gilroy Bold, sans-serif;
+          border: none;
+          color: rgb(254, 254, 254);
+        }
+      }
+    }
+
+    .main-image {
+      margin-top: 30px;
+    }
+  }
+}
+
+.advantages {
+  background-image: url("../images/фон 2 блок.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+
+  .container {
+    align-items: center;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .advantages-info {
+      display: grid;
+      grid-column-gap: 149px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 50px;
+
+      .advantages-image {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        position: relative;
+
+
+        img {
+          position: relative;
+          left: 0;
+        }
+      }
+
+      .advantages-info-bloc {
+        h2 {
+          font-size: 35px;
+          font-family: PlovdivDisplay Bold, sans-serif;
+          color: rgb(159, 37, 70);
+          line-height: 1.143;
+          text-align: left;
+          max-width: 330px;
+          margin-bottom: 40px;
+          margin-top: 94px;
+        }
+
+        .advantages-text {
+          font-size: 14px;
+          font-family: Gilroy, sans-serif;
+          color: rgb(58, 4, 19);
+          line-height: 1.643;
+          left: 1072.859px;
+          top: 1158.319px;
+          width: 429px;
+        }
+      }
+    }
+
+    .advantages-descriptions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      margin-bottom: 120px;
+
+      .advantage-description {
+        .advantages-description-image {
+          text-align: center;
+        }
+
+        .advantages-description-text {
+          font-size: 14px;
+          font-family: Gilroy, sans-serif;
+          color: rgb(58, 4, 19);
+          line-height: 1.357;
+          text-align: center;
+          left: 500.846px;
+          top: 1520.038px;
+          max-width: 142px;
+          margin-top: 20px;
+
+        }
+      }
+    }
+  }
+}
+
+.teachers {
+  .container {
+    align-items: center;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .teachers-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 35px;
+        font-family: PlovdivDisplay Bold, sans-serif;
+        color: rgb(159, 37, 70);
+        line-height: 1.714;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .teachers-text {
+        font-size: 14px;
+        font-family: Gilroy, sans-serif;
+        color: rgb(58, 4, 19);
+        line-height: 1.643;
+        text-align: center;
+        max-width: 608px;
+        height: 82px;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+    }
+
+
+    // Стиль слайдера
+    .swiper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      background-image: url("../images/mandala.png");
+      align-items: center;
+      justify-content: center;
+      background-repeat: repeat-x;
+      background-size: calc(100% / 3) auto;
+
+
+      // Обертка слайдов
+      .swiper-wrapper {
+        display: flex;
+        transition: transform 0.5s ease;
+
+        // Слайды без отступов
+        .swiper-slide {
+          //flex: 0 0 calc(100% / 3);
+          box-sizing: border-box;
+          padding: 0; // убираем внутренние отступы
+          margin: 0; // убираем внешние отступы
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        // Изображения внутри слайдов
+        .swiper-slide img {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 20px;
+        }
+      }
+
+      //Стрелки
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgb(69, 10, 21);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+
+        &::after {
+          font-family: 'Arial', sans-serif;
+          font-size: 20px;
+          color: #000;
+          display: block;
+          line-height: 1;
+        }
+
+      }
+
+      // Позиционирование стрелок
+      .swiper-button-prev {
+        //left: -30px;
+        &::after {
+          content: '←';
+          color: rgb(58, 4, 19);
+        }
+      }
+
+      .swiper-button-next {
+        //right: -30px;
+        &::after {
+          content: '→';
+          color: rgb(58, 4, 19);
+        }
+      }
+
+
+    }
+  }
+}
+
+.directions {
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    h2 {
+      font-size: 35px;
+      font-family: PlovdivDisplay Bold, sans-serif;
+      color: rgb(159, 37, 70);
+      text-align: center;
+      margin-top: 124px;
+    }
+
+    .directions-blocks {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 44px;
+      gap: 0 45px;
+
+      .direction-block {
+        .direction-block-image {
+          img {
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: scale(1.15);
+            }
+          }
+        }
+
+        .direction-block-info {
+          .direction-block-title {
+            font-size: 18px;
+            font-family: Gilroy Bold, sans-serif;
+            color: rgb(58, 4, 19);
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+          }
+
+          .direction-block-text {
+            font-size: 14px;
+            font-family: Gilroy, sans-serif;
+            color: rgb(58, 4, 19);
+            vertical-align: middle;
+            text-align: center;
+
+            img {
+              padding: 0 8px;
+            }
+          }
+        }
+      }
+
+      .schedule-popup {
+        display: none; /* по умолчанию скрыт */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        overflow-y: auto;
+        overflow-x: auto;
+        height: 100vh;
+
+        .popup-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+          position: relative;
+          background: #fff;
+          width: 80%;
+          max-width: 900px;
+          max-height: 80%;
+          padding: 20px;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+
+          .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 77px;
+            cursor: pointer;
+            color: rgb(159, 37, 70);
+            transition: color 0.3s;
+          }
+
+          .popup-title {
+            text-align: center;
+            //padding-top: 40px;
+            padding-bottom: 40px;
+            font-size: 35px;
+            font-family: PlovdivDisplay Bold, sans-serif;
+            color: rgb(159, 37, 70);
+          }
+
+          .selected-day {
+            font-size: 18px;
+            font-family: Gilroy Bold, sans-serif;
+            color: rgb(58, 4, 19);
+            font-weight: bold;
+            text-align: center;
+            padding: 40px;
+          }
+
+          .schedule-container {
+            display: flex;
+            gap: 20px;
+
+            .days-list {
+              display: flex;
+              flex-direction: column;
+              min-width: 150px;
+
+              .day-btn {
+                margin-bottom: 20px;
+                border: none;
+                cursor: pointer;
+                background-color: white;
+                font-size: 18px;
+                font-family: Gilroy, sans-serif;
+                color: rgb(58, 4, 19);
+                transition: background-color 0.3s;
+                text-align: left;
+              }
+
+              .day-btn:hover,
+              .day-btn.active {
+                font-weight: bold;
+              }
+            }
+
+            .schedule-info {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              width: 100%;
+              background-color: #fef2f2;
+
+              .schedule-table {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                padding: 0 40px;
+
+                .placeholder {
+                  font-family: Gilroy, sans-serif;
+                  color: rgb(58, 4, 19);
+                  font-size: 16px;
+                  padding: 20px;
+                }
+              }
+            }
+          }
+        }
+
+        .schedule-input {
+          display: flex;
+          margin-left: 94px;
+
+          .schedule-input-info {
+            .schedule-input-text {
+              font-size: 14px;
+              font-family: Gilroy, sans-serif;
+              color: rgb(58, 4, 19);
+              width: 255px;
+              border: none;
+              text-decoration: none;
+              border-bottom: 1px solid #9f2546;
+              margin-left: 79px;
+              margin-top: 60px;
+            }
+
+            .schedule-input-text::placeholder {
+              font-size: 14px;
+              font-family: Gilroy, sans-serif;
+              color: rgb(58, 4, 19);
+            }
+
+            .schedule-input-text:focus {
+              outline: none;
+              border-bottom: 3px solid rgb(58, 4, 19);
+            }
+
+            .error-message {
+              color: red;
+              display: block;
+              margin-left: 79px;
+              margin-top: 5px;
+            }
+          }
+
+          .schedule-input-contact {
+            .schedule-input-text {
+              font-size: 14px;
+              font-family: Gilroy, sans-serif;
+              color: rgb(58, 4, 19);
+              width: 255px;
+              border: none;
+              text-decoration: none;
+              border-bottom: 1px solid #9f2546;
+              margin-left: 79px;
+              margin-top: 60px;
+            }
+
+            .schedule-input-text::placeholder {
+              font-size: 14px;
+              font-family: Gilroy, sans-serif;
+              color: rgb(58, 4, 19);
+            }
+
+            .schedule-input-text:focus {
+              outline: none;
+              border-bottom: 3px solid rgb(58, 4, 19);
+            }
+
+            .error-message {
+              color: red;
+              display: block;
+              margin-left: 79px;
+              margin-top: 5px;
+            }
+          }
+        }
+
+      }
+
+      .schedule-input-btn {
+        background-image: -moz-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+        background-image: -webkit-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+        background-image: -ms-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+        box-shadow: 0 6px 6.51px 0.49px rgba(159, 37, 70, 0.22);
+        width: 253px;
+        padding: 22px 70px;
+        border-radius: 30px;
+        cursor: pointer;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 20px;
+        font-family: Gilroy Bold, sans-serif;
+        border: none;
+        color: white;
+        display: block;
+        margin: 30px auto 5px;
+      }
+
+      .schedule-row {
+        display: flex;
+        padding: 10px 0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .schedule-row:hover {
+        background-color: #9f2546;
+        color: #ffffff;
+      }
+
+      .schedule-row.active {
+        font-weight: bold;
+      }
+
+      .schedule-column {
+        flex: 1;
+        text-align: left;
+        font-family: Gilroy, sans-serif;
+        font-size: 14px;
+        color: rgb(58, 4, 19);
+      }
+      .schedule-column:hover {
+        color: #ffffff;
+      }
+
+      .thank-wrapper {
+        display: none;
+        width: 406px;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        .thankYouBlock {
+          background: #fff;
+          border: 2px solid rgb(119, 10, 29);
+          padding: 20px;
+          box-shadow: 0 0 15px rgb(119, 10, 29);
+          font-size: 20px;
+          z-index: 9999;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .directions-action {
+    text-align: center;
+
+    .btn {
+      background-image: -moz-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+      background-image: -webkit-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+      background-image: -ms-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+      box-shadow: 0px 6px 6.51px 0.49px rgba(159, 37, 70, 0.22);
+      width: 300px;
+      height: 60px;
+      border-radius: 30px;
+      cursor: pointer;
+      outline: none;
+      box-sizing: border-box;
+      font-size: 20px;
+      font-family: Gilroy Bold, sans-serif;
+      border: none;
+      color: white;
+      margin-top: 43px;
+      margin-bottom: 120px;
+    }
+  }
+}
+
+
+.halls {
+
+  .container {
+    max-width: 950px;
+    margin: 0 auto;
+    h2 {
+      font-size: 35px;
+      font-family: PlovdivDisplay Bold, sans-serif;
+      color: rgb(159, 37, 70);
+      text-align: center;
+      margin-bottom: 41px;
+    }
+
+    .halls-block {
+      display: flex;
+      justify-content: space-between;
+
+      .hall {
+        background-image: url("../images/mandala.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .hall-image {
+          img {
+            margin-bottom: 30px;
+          }
+        }
+
+        .hall-title {
+          font-size: 18px;
+          font-family: Gilroy Bold, sans-serif;
+          color: rgb(58, 4, 19);
+          margin-bottom: 20px;
+        }
+
+        .hall-text {
+          font-size: 14px;
+          font-family: Gilroy, sans-serif;
+          color: rgb(58, 4, 19);
+          margin-bottom: 30px;
+          max-width: 325px;
+        }
+      }
+    }
+
+    .hall-action {
+      text-align: center;
+
+      .btn {
+        background-image: -moz-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+        background-image: -webkit-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+        background-image: -ms-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+        box-shadow: 0px 6px 6.51px 0.49px rgba(159, 37, 70, 0.22);
+        width: 300px;
+        height: 60px;
+        border-radius: 30px;
+        cursor: pointer;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 20px;
+        font-family: Gilroy Bold, sans-serif;
+        border: none;
+        color: white;
+        margin-top: 13px;
+        margin-bottom: 120px;
+      }
+    }
+  }
+}
+
+.contacts {
+  background-image: url("../images/maps.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  background-size: cover;
+
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .contact {
+      width: 375px;
+      background-color: #fef2f2;
+      padding: 50px 69px 50px 50px;
+      box-sizing: border-box;
+
+      h2 {
+        font-size: 30px;
+        font-family: PlovdivDisplay Bold, sans-serif;
+        color: rgb(58, 4, 19);
+        margin-bottom: 29px;
+      }
+
+      .contact-info {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            font-size: 14px;
+            font-family: Gilroy, sans-serif;
+            color: rgb(58, 4, 19);
+            line-height: 1.643;
+            padding: 10px 10px 10px 22px;
+            max-width: 223px;
+            position: relative;
+            box-sizing: border-box;
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 12px;
+              height: 12px;
+              left: 0;
+              background-color: #9f2546;
+              border-radius: 50%;
+            }
+          }
+
+          // Первый пункт — кружок выше текста
+          li:first-child::before {
+            top: 14px;
+          }
+
+          // Второй и третий пункты — посередине
+          li:nth-child(2)::before,
+          li:nth-child(3)::before {
+            top: 50%; // посередине
+            transform: translateY(-50%);
+          }
+        }
+      }
+
+      .contact-network {
+        margin-top: 20px;
+        margin-bottom: 80px;
+
+        a {
+          text-decoration: none;
+        }
+
+        img {
+          margin-right: 20px;
+          transition: opacity 0.3s ease;
+          opacity: 1;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+
+      .contact-form {
+        .contact-form-title {
+          font-size: 18px;
+          font-family: Gilroy Bold, sans-serif;
+          color: rgb(58, 4, 19);
+          margin-bottom: 20px;
+        }
+
+        .contact-form-order {
+          .contact-block-name {
+            .contact-form-order-input {
+              border: none;
+              border-bottom: 1px solid #9f2546;
+              outline: none;
+              background: transparent;
+              padding: 6px 0;
+              font-size: 14px;
+              margin-bottom: 30px;
+              width: 260px;
+
+
+              &::placeholder {
+                color: rgb(58, 4, 19);
+                font-family: Gilroy, sans-serif;
+              }
+            }
+          }
+
+          .contact-block-phone {
+            .contact-form-order-input {
+              border: none;
+              border-bottom: 1px solid #9f2546;
+              outline: none;
+              background: transparent;
+              padding: 6px 0;
+              font-size: 14px;
+              margin-bottom: 30px;
+              width: 260px;
+
+
+              &::placeholder {
+                color: rgb(58, 4, 19);
+                font-family: Gilroy, sans-serif;
+              }
+            }
+          }
+
+          .error-message {
+            color: red;
+            display: block;
+            margin-top: -20px;
+            margin-bottom: 10px;
+          }
+        }
+
+        .contact-form-action {
+          .btn {
+            background-image: -moz-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+            background-image: -webkit-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+            background-image: -ms-linear-gradient(90deg, rgb(159, 37, 70) 0%, rgb(197, 81, 113) 51%, rgb(235, 125, 156) 100%);
+            box-shadow: 0px 6px 6.51px 0.49px rgba(159, 37, 70, 0.22);
+            width: 220px;
+            height: 50px;
+            border-radius: 30px;
+            cursor: pointer;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 20px;
+            font-family: Gilroy Bold, sans-serif;
+            border: none;
+            color: white;
+          }
+        }
+      }
+
+      .thank-wrapper {
+        display: none;
+        width: auto;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        .thankYouBlock {
+          background: #fff;
+          border: 2px solid rgb(119, 10, 29);
+          padding: 20px;
+          box-shadow: 0 0 15px rgb(119, 10, 29);
+          font-size: 18px;
+          z-index: 9999;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #9f2546;
+
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 54px 15px;
+
+    .logo-footer {
+
+    }
+
+    .footer-block {
+      display: flex;
+      width: 697px;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 55px;
+
+      .footer-block-info {
+        font-size: 14px;
+        font-family: Gilroy, sans-serif;
+        color: rgb(255, 255, 255);
+      }
+
+      .footer-block-link {
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          font-family: Gilroy, sans-serif;
+          color: rgb(255, 255, 255);
+        }
+
+      }
+
+      .footer-block-link a:hover {
+        border-bottom: 1px solid white;
+      }
+
+      .footer-block-phone {
+        align-items: center;
+        display: flex;
+
+        .footer-block-phone-number {
+          font-size: 14px;
+          font-family: Gilroy, sans-serif;
+          color: rgb(254, 254, 254);
+          margin-left: 10px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .footer-action {
+      .btn {
+        background-color: transparent;
+        width: 180px;
+        height: 42px;
+        border-radius: 30px;
+        cursor: pointer;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #fef2f2;
+        font-family: Gilroy Bold, sans-serif;
+        border: 1px solid #fef2f2;
+      }
+    }
+  }
+}
+
+
+@import "adaptive";
